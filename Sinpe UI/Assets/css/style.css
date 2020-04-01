@@ -416,6 +416,16 @@
         background-color: #212121;
     }
     
+    .logo2 {
+        display: flex;
+        margin: 0px;
+        padding: 0px;
+        width: 50%;
+        height: 4rem;
+        max-width: 100%;
+        align-items: center;
+    }
+    
     .nav-links {
         margin: 0;
         padding: 0;
