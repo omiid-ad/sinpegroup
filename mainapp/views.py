@@ -1,3 +1,17 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
-# Create your views here.
+
+def landing(request):
+    return render(request, 'mainapp/Index.html')
+
+
+def index(request):
+    return redirect('landing')
+
+
+def about(request):
+    return render(request, 'mainapp/aboutus.html')
+
+
+def portfolio(request):
+    return render(request, 'mainapp/portfolio.html')
