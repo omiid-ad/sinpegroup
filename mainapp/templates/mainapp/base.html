@@ -1,0 +1,69 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+{% block head %}
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{% block title %}{% endblock %}</title>
+        <link rel="stylesheet" href="{% static 'mainapp/css/all.min.css' %}">
+        <link rel="stylesheet" href="{% static 'mainapp/css/style.css' %}">
+    </head>
+{% endblock %}
+<body>
+{% block nav %}
+    <nav>
+        <ul class="nav-links">
+            <li><a href="#">صفحه اصلی</a></li>
+            <li><a href="#">نمونه کارها</a></li>
+            <li><a href="#">درباره ما</a></li>
+        </ul>
+        <ul class="logo">
+            <a class="contact-icon" href=""><i class="nav-icon fab fa-telegram-plane"></i></a>
+            <a class="contact-icon" href=""><i class="nav-icon fab fa-twitter"></i></a>
+            <a class="contact-icon" href=""><i class="nav-icon fab fa-instagram"></i></a>
+        </ul>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+{% endblock %}
+
+{% block contents %}{% endblock %}
+
+{% block contact-us %}
+    <div class="contact-us">
+        <div class="contact-title">
+            <span class="contact-text">تماس با سینپه </span>
+        </div>
+        <div class="contact-box">
+            <div>
+                <ul class="contact-list">
+                    <li class="contact-way"> @sinpestudio : تلگرام <i class="fab fa-telegram"></i></li>
+                    <li class="contact-way">شماره تماس : 09371707176<i class="fa fa-phone"></i>
+                    </li>
+                    <li class="contact-way"> sinpe : اینستاگرام<i class="fab fa-instagram"></i>
+                    </li>
+                </ul>
+                <img src="{% static 'mainapp/img/v.jpg' %}" width="300px" alt="">
+            </div>
+            <div>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d317715.71192633547!2d-0.3817840693070167!3d51.52873519756609!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8a00baf21de75%3A0x52963a5addd52a99!2sLondon!5e0!3m2!1sen!2suk!4v1585403822527!5m2!1sen!2suk"
+                        width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""
+                        aria-hidden="false"
+                        tabindex="0"></iframe>
+            </div>
+
+        </div>
+
+    </div>
+{% endblock %}
+
+{% block scripts %}
+    <script src="{% static 'mainapp/js/script.js' %}"></script>
+{% endblock %}
+</body>
+</html>
