@@ -33,6 +33,26 @@
     </nav>
 {% endblock %}
 
+{% block nav2 %}
+    <nav>
+        <ul class="nav-links">
+            <li><a href="{% url 'landing' %}">صفحه اصلی</a></li>
+            <li><a href="{% url 'portfolio' %}">نمونه کارها</a></li>
+            <li><a href="{% url 'about' %}">درباره ما</a></li>
+        </ul>
+        <ul class="logo2">
+            <a class="contact-icon" href="#"><i class="nav-icon fab fa-telegram-plane"></i></a>
+            <a class="contact-icon" href="#"><i class="nav-icon fab fa-twitter"></i></a>
+            <a class="contact-icon" href="#"><i class="nav-icon fab fa-instagram"></i></a>
+        </ul>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+{% endblock %}
+
 {% block contents %}{% endblock %}
 
 {% block contact-us %}
