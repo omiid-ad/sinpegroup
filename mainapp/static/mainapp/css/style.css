@@ -199,6 +199,7 @@ span.service-text,
 
 .port1-main {
     position: relative;
+    margin-right: 1rem;
 }
 
 .port1-alt {
@@ -651,6 +652,12 @@ a.contact-icon {
 .hvr-underline-from-center:active:before {
     left: 0;
     right: 0;
+}
+
+.shadows {
+    -webkit-box-shadow: 0px 0px 3px 2px rgba(230, 223, 230, 1);
+    -moz-box-shadow: 0px 0px 3px 2px rgba(230, 223, 230, 1);
+    box-shadow: 0px 0px 3px 2px rgba(230, 223, 230, 1);
 }
 
 @media only screen and (max-width: 420px) {
