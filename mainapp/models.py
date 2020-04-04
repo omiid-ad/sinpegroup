@@ -28,6 +28,7 @@ class Service(models.Model):
 
 class Portfolio(models.Model):
     service = models.ForeignKey(Service, on_delete=models.CASCADE, verbose_name="خدمت مربوطه")
+    title = models.CharField(max_length=30, verbose_name="عنوان نمونه کار")
     big_image_or_video = models.FileField(upload_to='portfolios', default='portfolios/default.png', blank=True,
                                           null=True, verbose_name="عکس یا فیلم نمونه")
     image1 = models.ImageField(upload_to='portfolios', default='portfolios/default.png', blank=True,
@@ -42,3 +43,46 @@ class Portfolio(models.Model):
                                null=True, verbose_name="عکس نمونه پنجم")
     image6 = models.ImageField(upload_to='portfolios', default='portfolios/default.png', blank=True,
                                null=True, verbose_name="عکس نمونه ششم")
+    active = models.BooleanField(default=True, verbose_name="خدمت فعال")
+
+    def __str__(self):
+        if self.active:
+            return self.title + "(فعال)"
+        elif not self.active:
+            return self.title + "(غیرفعال)"
+
+
+class PortfolioDescription(models.Model):
+    title = models.CharField(max_length=30, verbose_name="عنوان")
+    description = models.TextField(verbose_name="توضیحات")
+
+    def __str__(self):
+        return self.title + " " + self.description[0:10]
+
+    def save(self, *args, **kwargs):
+        PortfolioDescription.objects.all().delete()
+        super().save()
+
+
+class LandingDescription(models.Model):
+    title = models.CharField(max_length=30, verbose_name="عنوان")
+    description = models.TextField(verbose_name="توضیحات")
+
+    def __str__(self):
+        return self.title + " " + self.description[0:10]
+
+    def save(self, *args, **kwargs):
+        LandingDescription.objects.all().delete()
+        super().save()
+
+
+class AboutUsDescription(models.Model):
+    title = models.CharField(max_length=30, verbose_name="عنوان")
+    description = models.TextField(verbose_name="توضیحات")
+
+    def __str__(self):
+        return self.title + " " + self.description[0:10]
+
+    def save(self, *args, **kwargs):
+        AboutUsDescription.objects.all().delete()
+        super().save()
