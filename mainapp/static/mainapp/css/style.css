@@ -5,7 +5,6 @@
         color: #f1f1f1 !important;
         margin-right: 0.5rem !important;
     }
-
     p.white-text {
         margin-left: 0.5rem !important;
         text-align: left !important;
@@ -13,19 +12,16 @@
         font-size: 80px !important;
         color: #212121 !important;
     }
-
     .black-side {
         background-color: #212121 !important;
         height: 250px !important;
         width: 50% !important;
     }
-
     .white-side {
         width: 50% !important;
         height: 200px !important;
         background-color: #f1f1f1 !important;
     }
-
     span.service-text,
     .portfolio-text,
     .about-text,
@@ -33,17 +29,14 @@
         margin-right: 6rem !important;
         color: #f1f1f1 !important;
     }
-
     .service-row-1 {
         display: flex !important;
         flex-wrap: wrap !important;
     }
-
     .service-row-2 {
         display: flex !important;
         flex-wrap: wrap !important;
     }
-
     .service1,
     .service2,
     .service3,
@@ -54,13 +47,11 @@
         color: white !important;
         font-size: 60px !important;
     }
-
     .port1 {
         display: flex !important;
         flex-wrap: wrap !important;
         margin-top: 6rem !important;
     }
-
     .about-us-main {
         display: flex !important;
         flex-wrap: wrap !important;
@@ -68,7 +59,6 @@
         margin-top: 2rem !important;
         justify-content: space-evenly !important;
     }
-
     .portfolio-header,
     .aboutus-header {
         text-align: center !important;
@@ -76,7 +66,6 @@
         margin: 0 !important;
         font-weight: bold !important;
     }
-
     .portfolio-text-page,
     .aboutus-text-page {
         margin: 1rem 1rem !important;
@@ -85,7 +74,6 @@
         font-size: 28px !important;
         line-height: 45px !important;
     }
-
     p.team-name {
         position: static !important;
         color: #f2f2f2 !important;
@@ -93,16 +81,13 @@
         text-align: center !important;
         font-weight: 900 !important;
     }
-
     img.member-img {
         width: 75% !important;
         height: 350px !important;
     }
-
     .team-member {
         position: static !important;
     }
-
     .team {
         padding: 2rem 0rem 10rem !important;
         margin: 5rem 0 !important;
@@ -296,7 +281,7 @@ span.service-text,
 .service3,
 .service4,
 .service5,
-.service6 > .overlay1:hover,
+.service6>.overlay1:hover,
 .overlay2:hover,
 .overlay3:hover,
 .overlay4:hover {
@@ -312,6 +297,7 @@ span.service-text,
 
 .port1-main {
     position: relative;
+    margin-right: 1rem;
 }
 
 .port1-alt {
@@ -386,6 +372,7 @@ li.contact-way {
     margin: 1rem;
 }
 
+
 /* portfolio page */
 
 .portfolio-header,
@@ -410,8 +397,13 @@ li.contact-way {
     padding: 2rem 0;
 }
 
+
 /* navigation */
+
+
 /* ............................................navigation ......................................  */
+
+
 /* ............................................navigation ......................................  */
 
 nav {
@@ -525,15 +517,12 @@ nav {
     .logo {
         width: 15%;
     }
-
     .search {
         width: 20%;
     }
-
     .nav-links {
         width: 65%;
     }
-
     .logo img {
         width: 130px;
     }
@@ -543,19 +532,15 @@ nav {
     .nav-links {
         width: 60%;
     }
-
     input[type="search"] {
         max-width: 70%;
     }
-
     .nav-links {
         width: 70%;
     }
-
     .search {
         justify-content: flex-end;
     }
-
     .logo {
         width: 20%;
         justify-content: left;
@@ -567,7 +552,6 @@ nav {
     body {
         overflow-x: hidden;
     }
-
     .nav-links {
         position: absolute;
         right: 0;
@@ -586,26 +570,21 @@ nav {
         padding-bottom: 1rem;
         padding-top: 1rem;
     }
-
     .nav-links li {
         opacity: 0;
     }
-
     .burger {
         display: block;
         cursor: pointer;
     }
-
     input[type="search"] {
         display: none;
     }
-
     .nav-links li.search-hide {
         display: block;
         width: 80%;
         order: -1;
     }
-
     .nav-links li.search-hide input {
         display: block !important;
         margin: auto;
@@ -646,19 +625,22 @@ nav {
     transform: rotate(45deg) translate(-5px, -6px);
 }
 
+
 /*---------------------------------------------------responsive ----------------------------------------------*/
 
 @media screen and (max-width: 768px) {
     .logo {
         order: -1;
     }
-
     .burger {
         order: 2;
     }
 }
 
+
 /* /navigation */
+
+
 /* aboutus */
 
 .team {
@@ -733,4 +715,149 @@ i {
 
 a.contact-icon {
     margin: 0px 5px;
+}
+
+.hvr-underline-from-center {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    position: relative;
+    overflow: hidden;
+}
+
+.hvr-underline-from-center:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: 51%;
+    right: 51%;
+    bottom: 0;
+    background: #212121;
+    height: 4px;
+    -webkit-transition-property: left, right;
+    transition-property: left, right;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+}
+
+.hvr-underline-from-center:hover:before,
+.hvr-underline-from-center:focus:before,
+.hvr-underline-from-center:active:before {
+    left: 0;
+    right: 0;
+}
+
+.shadows {
+    -webkit-box-shadow: 0px 0px 3px 2px rgba(230, 223, 230, 1);
+    -moz-box-shadow: 0px 0px 3px 2px rgba(230, 223, 230, 1);
+    box-shadow: 0px 0px 3px 2px rgba(230, 223, 230, 1);
+}
+
+@media only screen and (max-width: 420px) {
+    p.black-text {
+        text-align: right !important;
+        font-size: 80px !important;
+        color: #f1f1f1 !important;
+        margin-right: 0.5rem !important;
+    }
+    p.white-text {
+        margin-left: 0.5rem !important;
+        text-align: left !important;
+        font-weight: bolder !important;
+        font-size: 80px !important;
+        color: #212121 !important;
+    }
+    .black-side {
+        background-color: #212121 !important;
+        height: 250px !important;
+        width: 50% !important;
+    }
+    .white-side {
+        width: 50% !important;
+        height: 200px !important;
+        background-color: #f1f1f1 !important;
+    }
+    span.service-text,
+    .portfolio-text,
+    .about-text,
+    .contact-text {
+        margin-right: 6rem !important;
+        color: #f1f1f1 !important;
+    }
+    .service-row-1 {
+        display: flex !important;
+        flex-wrap: wrap !important;
+    }
+    .service-row-2 {
+        display: flex !important;
+        flex-wrap: wrap !important;
+    }
+    .service1,
+    .service2,
+    .service3,
+    .service4,
+    .service5,
+    .service6 {
+        position: relative !important;
+        color: white !important;
+        font-size: 60px !important;
+    }
+    .port1 {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        margin-top: 6rem !important;
+    }
+    .about-us-main {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        background-color: #212121 !important;
+        margin-top: 2rem !important;
+        justify-content: space-evenly !important;
+    }
+    .portfolio-header,
+    .aboutus-header {
+        text-align: center !important;
+        font-size: 70px !important;
+        margin: 0 !important;
+        font-weight: bold !important;
+    }
+    .portfolio-text-page,
+    .aboutus-text-page {
+        margin: 1rem 1rem !important;
+        text-align: justify !important;
+        text-align-last: right !important;
+        font-size: 28px !important;
+        line-height: 45px !important;
+    }
+    p.team-name {
+        position: static !important;
+        color: #f2f2f2 !important;
+        font-size: 20px !important;
+        text-align: center !important;
+        font-weight: 900 !important;
+    }
+    img.member-img {
+        width: 75% !important;
+        height: 350px !important;
+    }
+    .team-member {
+        position: static !important;
+    }
+    .team {
+        padding: 2rem 0rem 10rem !important;
+        margin: 5rem 0 !important;
+        background: #212121 !important;
+        text-align: center !important;
+    }
+    .about-us-desc {
+        width: 90% !important
+    }
+    .logo,
+    .logo2 {
+        display: none;
+    }
 }
