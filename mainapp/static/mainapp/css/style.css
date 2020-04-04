@@ -1,101 +1,3 @@
-@media only screen and (max-width: 360px) {
-    p.black-text {
-        text-align: right !important;
-        font-size: 80px !important;
-        color: #f1f1f1 !important;
-        margin-right: 0.5rem !important;
-    }
-    p.white-text {
-        margin-left: 0.5rem !important;
-        text-align: left !important;
-        font-weight: bolder !important;
-        font-size: 80px !important;
-        color: #212121 !important;
-    }
-    .black-side {
-        background-color: #212121 !important;
-        height: 250px !important;
-        width: 50% !important;
-    }
-    .white-side {
-        width: 50% !important;
-        height: 200px !important;
-        background-color: #f1f1f1 !important;
-    }
-    span.service-text,
-    .portfolio-text,
-    .about-text,
-    .contact-text {
-        margin-right: 6rem !important;
-        color: #f1f1f1 !important;
-    }
-    .service-row-1 {
-        display: flex !important;
-        flex-wrap: wrap !important;
-    }
-    .service-row-2 {
-        display: flex !important;
-        flex-wrap: wrap !important;
-    }
-    .service1,
-    .service2,
-    .service3,
-    .service4,
-    .service5,
-    .service6 {
-        position: relative !important;
-        color: white !important;
-        font-size: 60px !important;
-    }
-    .port1 {
-        display: flex !important;
-        flex-wrap: wrap !important;
-        margin-top: 6rem !important;
-    }
-    .about-us-main {
-        display: flex !important;
-        flex-wrap: wrap !important;
-        background-color: #212121 !important;
-        margin-top: 2rem !important;
-        justify-content: space-evenly !important;
-    }
-    .portfolio-header,
-    .aboutus-header {
-        text-align: center !important;
-        font-size: 70px !important;
-        margin: 0 !important;
-        font-weight: bold !important;
-    }
-    .portfolio-text-page,
-    .aboutus-text-page {
-        margin: 1rem 1rem !important;
-        text-align: justify !important;
-        text-align-last: right !important;
-        font-size: 28px !important;
-        line-height: 45px !important;
-    }
-    p.team-name {
-        position: static !important;
-        color: #f2f2f2 !important;
-        font-size: 20px !important;
-        text-align: center !important;
-        font-weight: 900 !important;
-    }
-    img.member-img {
-        width: 75% !important;
-        height: 350px !important;
-    }
-    .team-member {
-        position: static !important;
-    }
-    .team {
-        padding: 2rem 0rem 10rem !important;
-        margin: 5rem 0 !important;
-        background: #212121 !important;
-        text-align: center !important;
-    }
-}
-
 @font-face {
     font-family: Kalameh;
     src: url(../fonts/Kalameh/Kalameh_Regular.ttf);
@@ -832,6 +734,10 @@ a.contact-icon {
         text-align-last: right !important;
         font-size: 28px !important;
         line-height: 45px !important;
+    }
+    .port1-main {
+        position: relative;
+        margin-right: 0rem;
     }
     p.team-name {
         position: static !important;
