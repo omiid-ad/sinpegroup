@@ -57,7 +57,7 @@ class PortfolioDescription(models.Model):
     description = models.TextField(verbose_name="توضیحات")
 
     def __str__(self):
-        return self.title + " " + self.description[0:10]
+        return self.title + " - " + self.description[0:10] + "..."
 
     def save(self, *args, **kwargs):
         PortfolioDescription.objects.all().delete()
@@ -69,7 +69,7 @@ class LandingDescription(models.Model):
     description = models.TextField(verbose_name="توضیحات")
 
     def __str__(self):
-        return self.title + " " + self.description[0:10]
+        return self.title + " - " + self.description[0:10] + "..."
 
     def save(self, *args, **kwargs):
         LandingDescription.objects.all().delete()
@@ -81,7 +81,7 @@ class AboutUsDescription(models.Model):
     description = models.TextField(verbose_name="توضیحات")
 
     def __str__(self):
-        return self.title + " " + self.description[0:10]
+        return self.title + " - " + self.description[0:10] + "..."
 
     def save(self, *args, **kwargs):
         AboutUsDescription.objects.all().delete()
