@@ -16,7 +16,7 @@ class Crew(models.Model):
 
 
 class Service(models.Model):
-    title = models.CharField(max_length=100, verbose_name="عنوان خدمت")
+    title = models.CharField(max_length=100, unique=True, verbose_name="عنوان خدمت")
     active = models.BooleanField(default=True, verbose_name="خدمت فعال")
 
     def __str__(self):
@@ -29,6 +29,8 @@ class Service(models.Model):
 class Portfolio(models.Model):
     service = models.ForeignKey(Service, on_delete=models.CASCADE, verbose_name="خدمت مربوطه")
     title = models.CharField(max_length=30, verbose_name="عنوان نمونه کار")
+    date_created = models.DateTimeField(auto_now_add=True)
+    date_modified = models.DateTimeField(auto_now=True)
     big_image_or_video = models.FileField(upload_to='portfolios', default='portfolios/default.png', blank=True,
                                           null=True, verbose_name="عکس یا فیلم نمونه")
     image1 = models.ImageField(upload_to='portfolios', default='portfolios/default.png', blank=True,
