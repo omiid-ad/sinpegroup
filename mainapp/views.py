@@ -6,12 +6,18 @@ from sinpegroup import settings
 
 def landing(request):
     services = get_services(6)  # 6
-    portfolios = get_portfolios(3)  # 3
+    portfolios = get_portfolios(3, 3)  # 3
     land_desc = get_landingpage_desc()
     MEDIA_URL = settings.MEDIA_URL
+
+    if 'page' in request.GET:
+        page_number = request.GET.get('page')
+        page_obj = portfolios.get_page(page_number)
+    else:
+        page_obj = portfolios.get_page(1)
     context = {
         'services': services,
-        'portfolios': portfolios,
+        'portfolios': page_obj,
         'land_desc': land_desc,
         'MEDIA_URL': MEDIA_URL,
     }
@@ -35,11 +41,18 @@ def about(request):
 
 
 def portfolio(request):
-    portfolios = get_portfolios('all')
+    portfolios = get_portfolios('all', 5)
     port_desc = get_port_desc()
     MEDIA_URL = settings.MEDIA_URL
+
+    if 'page' in request.GET:
+        page_number = request.GET.get('page')
+        page_obj = portfolios.get_page(page_number)
+    else:
+        page_obj = portfolios.get_page(1)
+
     context = {
-        'portfolios': portfolios,
+        'portfolios': page_obj,
         'port_desc': port_desc,
         'MEDIA_URL': MEDIA_URL,
     }
