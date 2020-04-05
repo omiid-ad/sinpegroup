@@ -5,9 +5,9 @@ from sinpegroup import settings
 
 
 def landing(request):
-    services = get_services()  # 6
-    portfolios = get_portfolios()  # 3
-    land_desc = get_landingpage_desc()  # 1
+    services = get_services(6)  # 6
+    portfolios = get_portfolios(3)  # 3
+    land_desc = get_landingpage_desc()
     MEDIA_URL = settings.MEDIA_URL
     context = {
         'services': services,
@@ -27,4 +27,12 @@ def about(request):
 
 
 def portfolio(request):
-    return render(request, 'mainapp/portfolio.html')
+    portfolios = get_portfolios('all')
+    port_desc = get_port_desc()
+    MEDIA_URL = settings.MEDIA_URL
+    context = {
+        'portfolios': portfolios,
+        'port_desc': port_desc,
+        'MEDIA_URL': MEDIA_URL,
+    }
+    return render(request, 'mainapp/portfolio.html', context)

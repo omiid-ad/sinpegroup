@@ -5,84 +5,30 @@
 {% block nav %}{% endblock %}
 
 {% block contents %}
-    <div class="portfolio-page">
-        <h1 class="portfolio-header">نمونه کار ها</h1>
-        <p class="portfolio-text-page">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان
-            گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی
-            مورد
-            نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی
-            می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم
-            افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد.
-            در
-            این صورت می توان امید
-            داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی
-            دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</p>
-    </div>
-    <div class="port1 black-box">
-        <div class="port1-main">
-            <img src="{% static 'mainapp/img/campaign.jpg' %}" alt="" width="100%" height="500">
-            <div class="text-block">
-                <h4 class="port-name">کافه 89</h4>
+    {% if port_desc %}
+        <div class="portfolio-page">
+            <h1 class="portfolio-header">{{ port_desc.title }}</h1>
+            <p class="portfolio-text-page">{{ port_desc.description|safe }}</p>
+        </div>
+    {% endif %}
+    {% if portfolios %}
+        {% for port in portfolios %}
+            <div class="port1 {% if forloop.counter|divisibleby:2 %}{% else %}black-box{% endif %}">
+                <div class="port1-main">
+                    <img src="{{ MEDIA_URL }}{{ port.big_image_or_video }}" alt="" width="100%" height="500">
+                    <div class="text-block">
+                        <h4 class="port-name">{{ port.title }}</h4>
+                    </div>
+                </div>
+                <div class="port1-alt">
+                    <img src="{{ MEDIA_URL }}{{ port.image1 }}" width="250" height="250" alt="">
+                    <img src="{{ MEDIA_URL }}{{ port.image2 }}" width="250" height="250" alt="">
+                    <img src="{{ MEDIA_URL }}{{ port.image3 }}" width="250" height="250" alt="">
+                    <img src="{{ MEDIA_URL }}{{ port.image4 }}" width="250" height="250" alt="">
+                    <img src="{{ MEDIA_URL }}{{ port.image5 }}" width="250" height="250" alt="">
+                    <img src="{{ MEDIA_URL }}{{ port.image6 }}" width="250" height="250" alt="">
+                </div>
             </div>
-        </div>
-        <div class="port1-alt">
-            <img src="{% static 'mainapp/img/campaign.jpg' %}" width="250" height="250" alt="">
-            <img src="{% static 'mainapp/img/campaign.jpg' %}" width="250" height="250" alt="">
-            <img src="{% static 'mainapp/img/campaign.jpg' %}" width="250" height="250" alt="">
-            <img src="{% static 'mainapp/img/campaign.jpg' %}" width="250" height="250" alt="">
-            <img src="{% static 'mainapp/img/campaign.jpg' %}" width="250" height="250" alt="">
-            <img src="{% static 'mainapp/img/campaign.jpg' %}" width="250" height="250" alt="">
-        </div>
-
-    </div>
-    <div class="port1">
-        <div class="port1-main">
-            <img src="{% static 'mainapp/img/campaign.jpg' %}" alt="" width="100%" height="500">
-            <div class="text-block">
-                <h4 class="port-name">کافه 89</h4>
-            </div>
-        </div>
-        <div class="port1-alt">
-            <img src="{% static 'mainapp/img/campaign.jpg' %}" width="250" height="250" alt="">
-            <img src="{% static 'mainapp/img/campaign.jpg' %}" width="250" height="250" alt="">
-            <img src="{% static 'mainapp/img/campaign.jpg' %}" width="250" height="250" alt="">
-            <img src="{% static 'mainapp/img/campaign.jpg' %}" width="250" height="250" alt="">
-            <img src="{% static 'mainapp/img/campaign.jpg' %}" width="250" height="250" alt="">
-            <img src="{% static 'mainapp/img/campaign.jpg' %}" width="250" height="250" alt="">
-        </div>
-
-    </div>
-    <div class="port1 black-box">
-        <div class="port1-main">
-            <img src="{% static 'mainapp/img/campaign.jpg' %}" alt="" width="100%" height="500">
-            <div class="text-block">
-                <h4 class="port-name">کافه 89</h4>
-            </div>
-        </div>
-        <div class="port1-alt">
-            <img src="{% static 'mainapp/img/campaign.jpg' %}" width="250" height="250" alt="">
-            <img src="{% static 'mainapp/img/campaign.jpg' %}" width="250" height="250" alt="">
-            <img src="{% static 'mainapp/img/campaign.jpg' %}" width="250" height="250" alt="">
-            <img src="{% static 'mainapp/img/campaign.jpg' %}" width="250" height="250" alt="">
-            <img src="{% static 'mainapp/img/campaign.jpg' %}" width="250" height="250" alt="">
-            <img src="{% static 'mainapp/img/campaign.jpg' %}" width="250" height="250" alt="">
-        </div>
-
-    </div>
-    <div class="port1">
-        <div class="port1-main">
-            <img src="{% static 'mainapp/img/campaign.jpg' %}" alt="" width="100%" height="500">
-            <div class="text-block">
-                <h4 class="port-name">کافه 89</h4>
-            </div>
-        </div>
-        <div class="port1-alt">
-            <img src="{% static 'mainapp/img/campaign.jpg' %}" width="250" height="250" alt="">
-            <img src="{% static 'mainapp/img/campaign.jpg' %}" width="250" height="250" alt="">
-            <img src="{% static 'mainapp/img/campaign.jpg' %}" width="250" height="250" alt="">
-            <img src="{% static 'mainapp/img/campaign.jpg' %}" width="250" height="250" alt="">
-            <img src="{% static 'mainapp/img/campaign.jpg' %}" width="250" height="250" alt="">
-            <img src="{% static 'mainapp/img/campaign.jpg' %}" width="250" height="250" alt="">
-        </div>
-    </div>
+        {% endfor %}
+    {% endif %}
 {% endblock %}
