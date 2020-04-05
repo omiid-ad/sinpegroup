@@ -23,7 +23,15 @@ def index(request):
 
 
 def about(request):
-    return render(request, 'mainapp/aboutus.html')
+    about_desc = get_about_desc()
+    crews = get_crew_members(6)
+    MEDIA_URL = settings.MEDIA_URL
+    context = {
+        'about_desc': about_desc,
+        'crews': crews,
+        'MEDIA_URL': MEDIA_URL,
+    }
+    return render(request, 'mainapp/aboutus.html', context)
 
 
 def portfolio(request):

@@ -5,39 +5,23 @@
 {% block nav %}{% endblock %}
 
 {% block contents %}
-    <div class="aboutus-page">
-        <h1 class="aboutus-header">درباره ما</h1>
-        <p class="aboutus-text-page">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان
-            گرافیک
-            است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز
-            و
-            کاربردهای متنوع با هدف بهبود ابزارهای کاربردی
-            می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم
-            افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد.
-            در
-            این صورت می توان امید
-            داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی
-            دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</p>
-    </div>
-    <div class="team">
-        <h2 class="aboutus-title">تیم سینپه</h2>
-        <div id="team1" class="team-member"><img src="{% static 'mainapp/img/team1.JPG' %}" alt="" class="member-img">
-            <p class="team-name">نیلوفر مرادی <br>طراح گرافیک</p>
+    {% if about_desc %}
+        <div class="aboutus-page">
+            <h1 class="aboutus-header">{{ about_desc.title }}</h1>
+            <p class="aboutus-text-page">{{ about_desc.description|safe }}</p>
         </div>
-        <div id="team2" class="team-member"><img src="{% static 'mainapp/img/team1.JPG' %}" alt="" class="member-img">
-            <p class="team-name">نیلوفر مرادی<br> طراح گرافیک</p>
+    {% endif %}
+
+    {% if crews %}
+        <div class="team">
+            <h2 class="aboutus-title">تیم سینپه</h2>
+            {% for member in crews %}
+                <div id="team{{ forloop.counter }}" class="team-member"><img
+                        src="{{ MEDIA_URL }}{{ member.profile_picture }}" alt=""
+                        class="member-img">
+                    <p class="team-name">{{ member.full_name }}<br>{{ member.skill }}</p>
+                </div>
+            {% endfor %}
         </div>
-        <div id="team3" class="team-member"><img src="{% static 'mainapp/img/team1.JPG' %}" alt="" class="member-img">
-            <p class="team-name">نیلوفر مرادی<br> طراح گرافیک</p>
-        </div>
-        <div id="team4" class="team-member"><img src="{% static 'mainapp/img/team1.JPG' %}" alt="" class="member-img">
-            <p class="team-name">نیلوفر مرادی <br>طراح گرافیک</p>
-        </div>
-        <div id="team5" class="team-member"><img src="{% static 'mainapp/img/team1.JPG' %}" alt="" class="member-img">
-            <p class="team-name">سینا پیریایی <br>عکاس</p>
-        </div>
-        <div id="team6" class="team-member"><img src="{% static 'mainapp/img/team1.JPG' %}" alt="" class="member-img">
-            <p class="team-name">محمد پارسا کیارسی پور<br>طراح وبسایت</p>
-        </div>
-    </div>
+    {% endif %}
 {% endblock %}

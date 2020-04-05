@@ -25,3 +25,9 @@ def get_landingpage_desc():
 
 def get_port_desc():
     return PortfolioDescription.objects.first()
+
+
+def get_about_desc():
+    return AboutUsDescription.objects.first()
+
+
