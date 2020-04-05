@@ -68,69 +68,30 @@
             <div class="portfolio-title">
                 <span class="portfolio-text">نمونه کار سینپه</span>
             </div>
-            <div class="port1">
-                <div class="port1-main">
-                    <img src="{{ MEDIA_URL }}{{ portfolios.0.big_image_or_video }}" alt="" width="100%" height="500">
-                    <div class="text-block">
-                        <h4 class="port-name">{{ portfolios.0.title }}</h4>
+            {% for port in portfolios %}
+                <div class="port1">
+                    <div class="port1-main">
+                        <img src="{{ MEDIA_URL }}{{ port.big_image_or_video }}" alt="" width="100%"
+                             height="500">
+                        <div class="text-block">
+                            <h4 class="port-name">{{ port.title }}</h4>
+                        </div>
                     </div>
-                </div>
-                <div class="port1-alt">
-                    <img src="{{ MEDIA_URL }}{{ portfolios.0.image1 }}" width="250" height="250" alt="">
-                    <img src="{{ MEDIA_URL }}{{ portfolios.0.image2 }}" width="250" height="250" alt="">
-                    <img src="{{ MEDIA_URL }}{{ portfolios.0.image3 }}" width="250" height="250" alt="">
-                    <img src="{{ MEDIA_URL }}{{ portfolios.0.image4 }}" width="250" height="250" alt="">
-                    <img src="{{ MEDIA_URL }}{{ portfolios.0.image5 }}" width="250" height="250" alt="">
-                    <img src="{{ MEDIA_URL }}{{ portfolios.0.image6 }}" width="250" height="250" alt="">
-                </div>
+                    <div class="port1-alt">
+                        <img src="{{ MEDIA_URL }}{{ port.image1 }}" width="250" height="250" alt="">
+                        <img src="{{ MEDIA_URL }}{{ port.image2 }}" width="250" height="250" alt="">
+                        <img src="{{ MEDIA_URL }}{{ port.image3 }}" width="250" height="250" alt="">
+                        <img src="{{ MEDIA_URL }}{{ port.image4 }}" width="250" height="250" alt="">
+                        <img src="{{ MEDIA_URL }}{{ port.image5 }}" width="250" height="250" alt="">
+                        <img src="{{ MEDIA_URL }}{{ port.image6 }}" width="250" height="250" alt="">
+                    </div>
 
-            </div>
-            <a href="{% url 'portfolio' %}">
-                <button class="more" type="button">بیشتر</button>
-            </a>
-        </div>
-        <!-- port2 -->
-        <div class="port1">
-            <div class="port1-main">
-                <img src="{{ MEDIA_URL }}{{ portfolios.1.big_image_or_video }}" alt="" width="100%" height="500">
-                <div class="text-block">
-                    <h4 class="port-name">{{ portfolios.1.title }}</h4>
                 </div>
-            </div>
-            <div class="port1-alt">
-                <img src="{{ MEDIA_URL }}{{ portfolios.1.image1 }}" width="250" height="250" alt="">
-                <img src="{{ MEDIA_URL }}{{ portfolios.1.image2 }}" width="250" height="250" alt="">
-                <img src="{{ MEDIA_URL }}{{ portfolios.1.image3 }}" width="250" height="250" alt="">
-                <img src="{{ MEDIA_URL }}{{ portfolios.1.image4 }}" width="250" height="250" alt="">
-                <img src="{{ MEDIA_URL }}{{ portfolios.1.image5 }}" width="250" height="250" alt="">
-                <img src="{{ MEDIA_URL }}{{ portfolios.1.image6 }}" width="250" height="250" alt="">
-            </div>
-
+                <a href="{% url 'portfolio' %}">
+                    <button class="more" type="button">بیشتر</button>
+                </a>
+            {% endfor %}
         </div>
-        <a href="{% url 'portfolio' %}">
-            <button class="more" type="button">بیشتر</button>
-        </a>
-        <!-- port3 -->
-        <div class="port1">
-            <div class="port1-main">
-                <img src="{{ MEDIA_URL }}{{ portfolios.2.big_image_or_video }}" alt="" width="100%" height="500">
-                <div class="text-block">
-                    <h4 class="port-name">{{ portfolios.2.title }}</h4>
-                </div>
-            </div>
-            <div class="port1-alt">
-                <img src="{{ MEDIA_URL }}{{ portfolios.2.image1 }}" width="250" height="250" alt="">
-                <img src="{{ MEDIA_URL }}{{ portfolios.2.image2 }}" width="250" height="250" alt="">
-                <img src="{{ MEDIA_URL }}{{ portfolios.2.image3 }}" width="250" height="250" alt="">
-                <img src="{{ MEDIA_URL }}{{ portfolios.2.image4 }}" width="250" height="250" alt="">
-                <img src="{{ MEDIA_URL }}{{ portfolios.2.image5 }}" width="250" height="250" alt="">
-                <img src="{{ MEDIA_URL }}{{ portfolios.2.image6 }}" width="250" height="250" alt="">
-            </div>
-
-        </div>
-        <a href="{% url 'portfolio' %}">
-            <button class="more" type="button">بیشتر</button>
-        </a>
     {% endif %}
     <!-- portfolio-->
     <!-- About us -->
