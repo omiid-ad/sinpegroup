@@ -9,8 +9,8 @@ def get_crew_members(amount):
 
 def get_portfolios(amount):
     if amount == 'all':
-        return Portfolio.objects.filter(active=True)
-    return Portfolio.objects.filter(active=True)[:amount]
+        return Portfolio.objects.filter(active=True).order_by('-date_created')
+    return Portfolio.objects.filter(active=True).order_by('-date_created')[:amount]
 
 
 def get_services(amount):

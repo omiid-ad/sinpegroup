@@ -29,8 +29,8 @@ class Service(models.Model):
 class Portfolio(models.Model):
     service = models.ForeignKey(Service, on_delete=models.CASCADE, verbose_name="خدمت مربوطه")
     title = models.CharField(max_length=30, verbose_name="عنوان نمونه کار")
-    date_created = models.DateTimeField(auto_now_add=True)
-    date_modified = models.DateTimeField(auto_now=True)
+    date_created = models.DateTimeField(auto_now_add=True, verbose_name="تاریخ ایجاد")
+    date_modified = models.DateTimeField(auto_now=True, verbose_name="تاریخ آخرین تغییر")
     big_image_or_video = models.FileField(upload_to='portfolios', default='portfolios/default.png', blank=True,
                                           null=True, verbose_name="عکس یا فیلم نمونه")
     image1 = models.ImageField(upload_to='portfolios', default='portfolios/default.png', blank=True,
