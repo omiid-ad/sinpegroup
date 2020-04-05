@@ -30,20 +30,21 @@
                 </div>
             </div>
         {% endfor %}
-        <div class="pagination">
-            <span class="step-links">
-                {% if portfolios.has_previous %}
-                    <a href="?page={{ portfolios.previous_page_number }}">previous</a>
-                {% endif %}
 
-                <span class="current">
-                    Page {{ portfolios.number }} of {{ portfolios.paginator.num_pages }}.
-                </span>
-
-                {% if portfolios.has_next %}
-                    <a href="?page={{ portfolios.next_page_number }}">next</a>
-                {% endif %}
-            </span>
-        </div>
+        <ul class="pagination">
+            <li class="page-item {% if portfolios.has_previous %}{% else %}disabled{% endif %}">
+                <a class="page-link"
+                   href="{% if portfolios.has_previous %}?page={{ portfolios.previous_page_number }}{% else %}#{% endif %}">
+                    Previous
+                </a>
+            </li>
+            <li class="page-item"><a class="page-link active" href="#">{{ portfolios.number }}</a></li>
+            <li class="page-item {% if portfolios.has_next %}{% else %} disabled {% endif %}">
+                <a class="page-link"
+                   href="{% if portfolios.has_next %}?page={{ portfolios.next_page_number }}{% else %}#{% endif %}">
+                    Next
+                </a>
+            </li>
+        </ul>
     {% endif %}
 {% endblock %}

@@ -9,12 +9,7 @@ def landing(request):
     portfolios = get_portfolios(3, 3)  # 3
     land_desc = get_landingpage_desc()
     MEDIA_URL = settings.MEDIA_URL
-
-    if 'page' in request.GET:
-        page_number = request.GET.get('page')
-        page_obj = portfolios.get_page(page_number)
-    else:
-        page_obj = portfolios.get_page(1)
+    page_obj = portfolios.get_page(1)
     context = {
         'services': services,
         'portfolios': page_obj,
