@@ -803,3 +803,28 @@ a.contact-icon {
         display: none;
     }
 }
+
+/*pagination styles*/
+.pagination{
+    list-style: none;
+    display: block;
+    text-align: center;
+}
+.page-link {
+    text-decoration: none;
+}
+
+.page-item {
+    display: inline;
+    margin: 10px;
+}
+
+.disabled {
+    color: grey;
+    cursor: not-allowed;
+}
+.active {
+    font-size: larger;
+    font-weight: bolder;
+}
+/*end pagination styles*/
