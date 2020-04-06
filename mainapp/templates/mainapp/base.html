@@ -3,21 +3,20 @@
 <html lang="en">
 
 {% block head %}
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}{% endblock %}</title>
-    <link rel="stylesheet" href="{% static 'mainapp/css/all.min.css' %}">
-    <link rel="stylesheet" href="{% static 'mainapp/css/style.css' %}">
-    <link rel="stylesheet" href="{% static 'mainapp/static/mainapp/css/lightbox.css' %}">
-    <link rel="icon" href="{% static 'mainapp/img/v.jpg' %}">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{% block title %}{% endblock %}</title>
+        <link rel="stylesheet" href="{% static 'mainapp/css/all.min.css' %}">
+        <link rel="stylesheet" href="{% static 'mainapp/css/style.css' %}">
+        <link rel="stylesheet" href="{% static 'mainapp/css/lightbox.css' %}">
+        <link rel="icon" href="{% static 'mainapp/img/v.jpg' %}">
+    </head>
 {% endblock %}
 
 <body>
 
-    {% block nav %}
+{% block nav %}
     <nav>
         <ul class="nav-links">
             <li class="hvr-underline-from-center"><a href="{% url 'landing' %}">صفحه اصلی</a></li>
@@ -35,7 +34,9 @@
             <div class="line3"></div>
         </div>
     </nav>
-    {% endblock %} {% block nav2 %}
+{% endblock %}
+
+{% block nav2 %}
     <nav>
         <ul class="nav-links">
             <li><a href="{% url 'landing' %}">صفحه اصلی</a></li>
@@ -53,7 +54,11 @@
             <div class="line3"></div>
         </div>
     </nav>
-    {% endblock %} {% block contents %}{% endblock %} {% block contact-us %}
+{% endblock %}
+
+{% block contents %}{% endblock %}
+
+{% block contact-us %}
     <div class="contact-us">
         <div class="contact-title">
             <span class="contact-text">تماس با سینپه </span>
@@ -71,15 +76,17 @@
             </div>
             <div>
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d317715.71192633547!2d-0.3817840693070167!3d51.52873519756609!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8a00baf21de75%3A0x52963a5addd52a99!2sLondon!5e0!3m2!1sen!2suk!4v1585403822527!5m2!1sen!2suk"
-                    width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                        width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""
+                        aria-hidden="false" tabindex="0"></iframe>
             </div>
         </div>
     </div>
-    {% endblock %} {% block scripts %}
+{% endblock %}
+
+{% block scripts %}
     <script src="{% static 'mainapp/js/script.js' %}"></script>
     <script src="{% static 'mainapp/js/lightbox-plus-jquery.js' %}"></script>
-    {% endblock %}
+{% endblock %}
 
 </body>
-
 </html>
