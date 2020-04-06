@@ -65,18 +65,18 @@
     {% for port in portfolios %}
     <div class="port1">
         <div class="port1-main">
-            <img class="shadows" src="{{ MEDIA_URL }}{{ port.big_image_or_video }}" alt="" width="100%" height="500">
+            <a data-lightbox="image-1" href="{{ MEDIA_URL }}{{ port.image1 }}"><img class="shadows" src="{{ MEDIA_URL }}{{ port.big_image_or_video }}" alt="" width="100%" height="500"></a>
             <div class="text-block">
                 <h4 class=" port-name">{{ port.title }}</h4>
             </div>
         </div>
         <div class="port1-alt">
-            <img class="shadows" src="{{ MEDIA_URL }}{{ port.image1 }}" width="250" height="250" alt="">
-            <img class="shadows" src="{{ MEDIA_URL }}{{ port.image2 }}" width="250" height="250" alt="">
-            <img class="shadows" src="{{ MEDIA_URL }}{{ port.image3 }}" width="250" height="250" alt="">
-            <img class="shadows" src="{{ MEDIA_URL }}{{ port.image4 }}" width="250" height="250" alt="">
-            <img class="shadows" src="{{ MEDIA_URL }}{{ port.image5 }}" width="250" height="250" alt="">
-            <img class="shadows" src="{{ MEDIA_URL }}{{ port.image6 }}" width="250" height="250" alt="">
+            <a data-lightbox="image-1" href="{{ MEDIA_URL }}{{ port.image1 }}"><img class="shadows" src="{{ MEDIA_URL }}{{ port.image1 }}" width="250" height="250" alt=""></a>
+            <a data-lightbox="image-1" href="{{ MEDIA_URL }}{{ port.image2 }}"><img class="shadows" src="{{ MEDIA_URL }}{{ port.image2 }}" width="250" height="250" alt=""></a>
+            <a data-lightbox="image-1" href="{{ MEDIA_URL }}{{ port.image3 }}"><img class="shadows" src="{{ MEDIA_URL }}{{ port.image3 }}" width="250" height="250" alt=""></a>
+            <a data-lightbox="image-1" href="{{ MEDIA_URL }}{{ port.image4 }}"><img class="shadows" src="{{ MEDIA_URL }}{{ port.image4 }}" width="250" height="250" alt=""></a>
+            <a data-lightbox="image-1" href="{{ MEDIA_URL }}{{ port.image5 }}"><img class="shadows" src="{{ MEDIA_URL }}{{ port.image5 }}" width="250" height="250" alt=""></a>
+            <a data-lightbox="image-1" href="{{ MEDIA_URL }}{{ port.image6 }}"><img class="shadows" src="{{ MEDIA_URL }}{{ port.image6 }}" width="250" height="250" alt=""></a>
         </div>
 
     </div>
