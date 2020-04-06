@@ -42,7 +42,8 @@ class Service(models.Model):
 
 
 class Portfolio(models.Model):
-    service = models.ForeignKey(Service, on_delete=models.CASCADE, verbose_name="خدمت مربوطه", default=1)
+    service = models.ForeignKey(Service, on_delete=models.CASCADE, verbose_name="خدمت مربوطه",
+                                default=Service.objects.first().pk)
     title = models.CharField(max_length=30, verbose_name="عنوان نمونه کار")
     date_created = models.DateTimeField(auto_now_add=True, verbose_name="تاریخ ایجاد")
     date_modified = models.DateTimeField(auto_now=True, verbose_name="تاریخ آخرین تغییر")
