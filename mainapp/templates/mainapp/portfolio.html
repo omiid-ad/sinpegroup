@@ -1,38 +1,67 @@
-{% extends 'mainapp/base.html' %} {% load static %} {% block title %}نمونه کارها{% endblock %} {% block nav %}{% endblock %} {% block contents %} {% if port_desc %}
-<div class="portfolio-page">
-    <h1 class="portfolio-header">{{ port_desc.title }}</h1>
-    <p class="portfolio-text-page">{{ port_desc.description|safe }}</p>
-</div>
-{% endif %} {% if portfolios %} {% for port in portfolios %}
-<div class="port1 {% if forloop.counter|divisibleby:2 %}{% else %}black-box{% endif %}">
-    <div class="port1-main">
-        <a data-lightbox="image-1" href="{{ MEDIA_URL }}{{ port.image1 }}"><img class="shadows" src="{{ MEDIA_URL }}{{ port.big_image_or_video }}" alt="" width="100%" height="500"></a>
-        <div class="text-block">
-            <h4 class="port-name">{{ port.title }}</h4>
-        </div>
-    </div>
-    <div class="port1-alt">
-        <a data-lightbox="image-1" href="{{ MEDIA_URL }}{{ port.image1 }}"><img class="shadows" src="{{ MEDIA_URL }}{{ port.image1 }}" width="250" height="250" alt=""></a>
-        <a data-lightbox="image-1" href="{{ MEDIA_URL }}{{ port.image2 }}"><img class="shadows" src="{{ MEDIA_URL }}{{ port.image2 }}" width="250" height="250" alt=""></a>
-        <a data-lightbox="image-1" href="{{ MEDIA_URL }}{{ port.image3 }}"><img class="shadows" src="{{ MEDIA_URL }}{{ port.image3 }}" width="250" height="250" alt=""></a>
-        <a data-lightbox="image-1" href="{{ MEDIA_URL }}{{ port.image4 }}"><img class="shadows" src="{{ MEDIA_URL }}{{ port.image4 }}" width="250" height="250" alt=""></a>
-        <a data-lightbox="image-1" href="{{ MEDIA_URL }}{{ port.image5 }}"><img class="shadows" src="{{ MEDIA_URL }}{{ port.image5 }}" width="250" height="250" alt=""></a>
-        <a data-lightbox="image-1" href="{{ MEDIA_URL }}{{ port.image6 }}"><img class="shadows" src="{{ MEDIA_URL }}{{ port.image6 }}" width="250" height="250" alt=""></a>
-    </div>
-</div>
-{% endfor %}
+{% extends 'mainapp/base.html' %}
+{% load static %}
+{% block title %}نمونه کارها{% endblock %}
 
-<ul class="pagination">
-    <li class="page-item {% if portfolios.has_previous %}{% else %}disabled{% endif %}">
-        <a class="page-link" href="{% if portfolios.has_previous %}?page={{ portfolios.previous_page_number }}{% else %}#{% endif %}">
+{% block nav %}{% endblock %}
+
+{% block contents %}
+    {% if port_desc %}
+        <div class="portfolio-page">
+            <h1 class="portfolio-header">{{ port_desc.title }}</h1>
+            <p class="portfolio-text-page">{{ port_desc.description|safe }}</p>
+        </div>
+    {% endif %}
+
+    {% if portfolios %}
+        {% for port in portfolios %}
+            <div class="port1 {% if forloop.counter|divisibleby:2 %}{% else %}black-box{% endif %}">
+                <div class="port1-main">
+                    <a data-lightbox="image-{{ forloop.counter }}"
+                       href="{{ MEDIA_URL }}{{ port.big_image_or_video }}"><img
+                            class="shadows" src="
+                    {{ MEDIA_URL }}{{ port.big_image_or_video }}" alt="" width="100%" height="500"></a>
+                    <div class="text-block">
+                        <h4 class="port-name">{{ port.title }}</h4>
+                    </div>
+                </div>
+                <div class="port1-alt">
+                    <a data-lightbox="image-{{ forloop.counter }}" href="{{ MEDIA_URL }}{{ port.image1 }}"><img
+                            class="shadows" src="
+                    {{ MEDIA_URL }}{{ port.image1 }}" width="250" height="250" alt=""></a>
+                    <a data-lightbox="image-{{ forloop.counter }}" href="{{ MEDIA_URL }}{{ port.image2 }}"><img
+                            class="shadows" src="
+                    {{ MEDIA_URL }}{{ port.image2 }}" width="250" height="250" alt=""></a>
+                    <a data-lightbox="image-{{ forloop.counter }}" href="{{ MEDIA_URL }}{{ port.image3 }}"><img
+                            class="shadows" src="
+                    {{ MEDIA_URL }}{{ port.image3 }}" width="250" height="250" alt=""></a>
+                    <a data-lightbox="image-{{ forloop.counter }}" href="{{ MEDIA_URL }}{{ port.image4 }}"><img
+                            class="shadows" src="
+                    {{ MEDIA_URL }}{{ port.image4 }}" width="250" height="250" alt=""></a>
+                    <a data-lightbox="image-{{ forloop.counter }}" href="{{ MEDIA_URL }}{{ port.image5 }}"><img
+                            class="shadows" src="
+                    {{ MEDIA_URL }}{{ port.image5 }}" width="250" height="250" alt=""></a>
+                    <a data-lightbox="image-{{ forloop.counter }}" href="{{ MEDIA_URL }}{{ port.image6 }}"><img
+                            class="shadows" src="
+                    {{ MEDIA_URL }}{{ port.image6 }}" width="250" height="250" alt=""></a>
+                </div>
+            </div>
+        {% endfor %}
+
+        <ul class="pagination">
+            <li class="page-item {% if portfolios.has_previous %}{% else %}disabled{% endif %}">
+                <a class="page-link"
+                   href="{% if portfolios.has_previous %}
+                   ?page={{ portfolios.previous_page_number }}{% else %}#{% endif %}">
                     قبلی
                 </a>
-    </li>
-    <li class="page-item"><a class="page-link active" href="#">{{ portfolios.number }}</a></li>
-    <li class="page-item {% if portfolios.has_next %}{% else %} disabled {% endif %}">
-        <a class="page-link" href="{% if portfolios.has_next %}?page={{ portfolios.next_page_number }}{% else %}#{% endif %}">
+            </li>
+            <li class="page-item"><a class="page-link active" href="#">{{ portfolios.number }}</a></li>
+            <li class="page-item {% if portfolios.has_next %}{% else %} disabled {% endif %}">
+                <a class="page-link"
+                   href="{% if portfolios.has_next %}?page={{ portfolios.next_page_number }}{% else %}#{% endif %}">
                     بعدی
                 </a>
-    </li>
-</ul>
-{% endif %} {% endblock %}
+            </li>
+        </ul>
+    {% endif %}
+{% endblock %}
