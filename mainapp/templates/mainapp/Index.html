@@ -65,6 +65,39 @@
     {% for port in portfolios %}
     <div class="port1">
         <div class="port1-main">
+            <img class="shadows" src="{{ MEDIA_URL }}{{ port.big_image_or_video }}" alt="" width="100%" height="500">
+            <div class="text-block">
+                <h4 class=" port-name">{{ port.title }}</h4>
+            </div>
+        </div>
+        <div class="port1-alt">
+            <img class="shadows" src="{{ MEDIA_URL }}{{ port.image1 }}" width="250" height="250" alt="">
+            <img class="shadows" src="{{ MEDIA_URL }}{{ port.image2 }}" width="250" height="250" alt="">
+            <img class="shadows" src="{{ MEDIA_URL }}{{ port.image3 }}" width="250" height="250" alt="">
+            <img class="shadows" src="{{ MEDIA_URL }}{{ port.image4 }}" width="250" height="250" alt="">
+            <img class="shadows" src="{{ MEDIA_URL }}{{ port.image5 }}" width="250" height="250" alt="">
+            <img class="shadows" src="{{ MEDIA_URL }}{{ port.image6 }}" width="250" height="250" alt="">
+        </div>
+
+    </div>
+    <a href="{% url 'portfolio' %}">
+        <button class="hvr-bounce-to-right more" type="button">بیشتر</button>
+    </a>
+    {% endfor %}
+</div>
+</div>
+</div>
+{% endif %}
+<!-- End of service -->
+<!-- portfolio -->
+{% if portfolios %}
+<div class="portfolio">
+    <div class="portfolio-title">
+        <span class="portfolio-text">نمونه کار سینپه</span>
+    </div>
+    {% for port in portfolios %}
+    <div class="port1">
+        <div class="port1-main">
             <a data-lightbox="image-1" href="{{ MEDIA_URL }}{{ port.image1 }}"><img class="shadows" src="{{ MEDIA_URL }}{{ port.big_image_or_video }}" alt="" width="100%" height="500"></a>
             <div class="text-block">
                 <h4 class=" port-name">{{ port.title }}</h4>
@@ -78,32 +111,25 @@
             <a data-lightbox="image-1" href="{{ MEDIA_URL }}{{ port.image5 }}"><img class="shadows" src="{{ MEDIA_URL }}{{ port.image5 }}" width="250" height="250" alt=""></a>
             <a data-lightbox="image-1" href="{{ MEDIA_URL }}{{ port.image6 }}"><img class="shadows" src="{{ MEDIA_URL }}{{ port.image6 }}" width="250" height="250" alt=""></a>
         </div>
+        {% endif %}
+        <!-- portfolio-->
+        <!-- About us -->
+        {% if land_desc %}
+        <div class="about-us">
+            <div class="about-title">
+                <span class="about-text">درباره ی سینپه </span>
+            </div>
+            <div class="about-us-main">
+                <div class="about-us-body">
+                    <img class="about-us-img" src="{% static 'mainapp/img/931A3872.JPG' %}" width="250" height="300px" alt="">
+                </div>
+                <div class="about-us-desc">
+                    <h1 class="desc-title"> {{ land_desc.title }}</h1>
+                    <p class="about-us-text">{{ land_desc.description|safe }}</p>
+                </div>
 
-    </div>
-    <a href="{% url 'portfolio' %}">
-        <button class="hvr-bounce-to-right more" type="button">بیشتر</button>
-    </a>
-    {% endfor %}
-</div>
-{% endif %}
-<!-- portfolio-->
-<!-- About us -->
-{% if land_desc %}
-<div class="about-us">
-    <div class="about-title">
-        <span class="about-text">درباره ی سینپه </span>
-    </div>
-    <div class="about-us-main">
-        <div class="about-us-body">
-            <img class="about-us-img" src="{% static 'mainapp/img/931A3872.JPG' %}" width="250" height="300px" alt="">
+            </div>
         </div>
-        <div class="about-us-desc">
-            <h1 class="desc-title"> {{ land_desc.title }}</h1>
-            <p class="about-us-text">{{ land_desc.description|safe }}</p>
-        </div>
-
-    </div>
-</div>
-{% endif %}
-<!--About us -->
-{% endblock %}
+        {% endif %}
+        <!--About us -->
+        {% endblock %}
