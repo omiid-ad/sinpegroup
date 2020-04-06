@@ -1,4 +1,5 @@
 from django.db import models
+from django.template.defaultfilters import truncatechars
 
 
 class Crew(models.Model):
@@ -27,12 +28,12 @@ class Service(models.Model):
 
 
 class Portfolio(models.Model):
-    service = models.ForeignKey(Service, on_delete=models.CASCADE, verbose_name="خدمت مربوطه")
+    service = models.ForeignKey(Service, on_delete=models.CASCADE, verbose_name="خدمت مربوطه", default=1)
     title = models.CharField(max_length=30, verbose_name="عنوان نمونه کار")
     date_created = models.DateTimeField(auto_now_add=True, verbose_name="تاریخ ایجاد")
     date_modified = models.DateTimeField(auto_now=True, verbose_name="تاریخ آخرین تغییر")
     big_image_or_video = models.FileField(upload_to='portfolios', default='portfolios/default.png', blank=True,
-                                          null=True, verbose_name="عکس یا فیلم نمونه")
+                                          null=True, verbose_name="عکس یا فیلم نمونه بزرگ")
     image1 = models.ImageField(upload_to='portfolios', default='portfolios/default.png', blank=True,
                                null=True, verbose_name="عکس نمونه اول")
     image2 = models.ImageField(upload_to='portfolios', default='portfolios/default.png', blank=True,
@@ -65,6 +66,10 @@ class PortfolioDescription(models.Model):
         PortfolioDescription.objects.all().delete()
         super().save()
 
+    @property
+    def short_description(self):
+        return truncatechars(self.description, 50)
+
 
 class LandingDescription(models.Model):
     title = models.CharField(max_length=30, verbose_name="عنوان")
@@ -77,6 +82,10 @@ class LandingDescription(models.Model):
         LandingDescription.objects.all().delete()
         super().save()
 
+    @property
+    def short_description(self):
+        return truncatechars(self.description, 50)
+
 
 class AboutUsDescription(models.Model):
     title = models.CharField(max_length=30, verbose_name="عنوان")
@@ -88,3 +97,7 @@ class AboutUsDescription(models.Model):
     def save(self, *args, **kwargs):
         AboutUsDescription.objects.all().delete()
         super().save()
+
+    @property
+    def short_description(self):
+        return truncatechars(self.description, 50)
