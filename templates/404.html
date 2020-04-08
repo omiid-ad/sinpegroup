@@ -2,9 +2,11 @@
 {% load static %}
 {% block title %}صفحه مورد نظر یافت نشد!{% endblock %}
 
+{% block nav %}{% endblock %}
+
 {% block contents %}
     <h1 class="aboutus-header"> :( </h1>
-    <h1 class="aboutus-header" style="margin-top: 20px!important;"> !صفحه مورد نظر یافت نشد</h1>
+    <h1 class="aboutus-header" style="margin-top: 20px!important;">صفحه مورد نظر یافت نشد</h1>
     <a style="display: block; text-align: right; margin-right: 160px; text-decoration: none; color: dimgrey; margin-top: 15px; font-size: 35px;"
        href="{% url 'landing' %}">مرا به صفحه اصلی بازگردان &#8618</a>
 {% endblock %}
