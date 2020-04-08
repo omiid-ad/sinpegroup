@@ -1,5 +1,5 @@
 from django.contrib import admin
-from django_summernote.admin import SummernoteModelAdmin
+# from django_summernote.admin import SummernoteModelAdmin
 from django_summernote.models import Attachment
 
 from .models import *
@@ -48,45 +48,45 @@ class PortfolioDescriptionA(admin.ModelAdmin):
     list_display = ('title', 'short_description')
 
 
-class PortfolioDescriptionB(SummernoteModelAdmin):
-    summernote_fields = '__all__'
-
-
-class PortfolioDescriptionC(PortfolioDescriptionA, PortfolioDescriptionB):
-    pass
+# class PortfolioDescriptionB(SummernoteModelAdmin):
+#     summernote_fields = '__all__'
+#
+#
+# class PortfolioDescriptionC(PortfolioDescriptionA, PortfolioDescriptionB):
+#     pass
 
 
 class AboutUsDescriptionA(admin.ModelAdmin):
     list_display = ('title', 'short_description')
 
 
-class AboutUsDescriptionB(SummernoteModelAdmin):
-    summernote_fields = '__all__'
-
-
-class AboutUsDescriptionC(AboutUsDescriptionA, AboutUsDescriptionB):
-    pass
+# class AboutUsDescriptionB(SummernoteModelAdmin):
+#     summernote_fields = '__all__'
+#
+#
+# class AboutUsDescriptionC(AboutUsDescriptionA, AboutUsDescriptionB):
+#     pass
 
 
 class LandingDescriptionA(admin.ModelAdmin):
     list_display = ('title', 'short_description')
 
 
-class LandingDescriptionB(SummernoteModelAdmin):
-    summernote_fields = '__all__'
-
-
-class LandingDescriptionC(LandingDescriptionA, LandingDescriptionB):
-    pass
+# class LandingDescriptionB(SummernoteModelAdmin):
+#     summernote_fields = '__all__'
+#
+#
+# class LandingDescriptionC(LandingDescriptionA, LandingDescriptionB):
+#     pass
 
 
 admin.site.unregister(Attachment)
 admin.site.register(Crew, CrewA)
 admin.site.register(Service, ServiceA)
 admin.site.register(Portfolio, PortfoliosA)
-admin.site.register(PortfolioDescription, PortfolioDescriptionC)
-admin.site.register(AboutUsDescription, AboutUsDescriptionC)
-admin.site.register(LandingDescription, LandingDescriptionC)
+admin.site.register(PortfolioDescription, PortfolioDescriptionA)
+admin.site.register(AboutUsDescription, AboutUsDescriptionA)
+admin.site.register(LandingDescription, LandingDescriptionA)
 
 admin.site.site_header = "سینپه گروپ"
 admin.site.site_title = "سینپه گروپ"
