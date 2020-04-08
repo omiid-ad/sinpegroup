@@ -80,7 +80,7 @@ class LandingDescriptionA(admin.ModelAdmin):
 #     pass
 
 
-admin.site.unregister(Attachment)
+# admin.site.unregister(Attachment)
 admin.site.register(Crew, CrewA)
 admin.site.register(Service, ServiceA)
 admin.site.register(Portfolio, PortfoliosA)
