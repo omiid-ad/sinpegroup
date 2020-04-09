@@ -3,7 +3,8 @@
     src: url(../fonts/Kalameh/Kalameh_Regular.ttf);
 }
 
-@font-face {
+
+/* @font-face {
     font-family: Kalameh_bold;
     src: url(../fonts/Kalameh/Kalameh_Bold.ttf);
 }
@@ -16,7 +17,7 @@
 @font-face {
     font-family: Kalameh;
     src: url(../fonts/Kalameh/Kalameh_Black.ttf);
-}
+} */
 
 * {
     font-family: kalameh;
