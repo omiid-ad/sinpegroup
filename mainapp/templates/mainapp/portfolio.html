@@ -46,22 +46,23 @@
                 </div>
             </div>
         {% endfor %}
-
-        <ul class="pagination">
-            <li class="page-item {% if portfolios.has_previous %}{% else %}disabled{% endif %}">
-                <a class="page-link"
-                   href="{% if portfolios.has_previous %}
+        {% ifnotequal portfolios.paginator.num_pages 1 %}
+            <ul class="pagination">
+                <li class="page-item {% if portfolios.has_previous %}{% else %}disabled{% endif %}">
+                    <a class="page-link"
+                       href="{% if portfolios.has_previous %}
                    ?page={{ portfolios.previous_page_number }}{% else %}#{% endif %}">
-                    قبلی
-                </a>
-            </li>
-            <li class="page-item"><a class="page-link active" href="#">{{ portfolios.number }}</a></li>
-            <li class="page-item {% if portfolios.has_next %}{% else %} disabled {% endif %}">
-                <a class="page-link"
-                   href="{% if portfolios.has_next %}?page={{ portfolios.next_page_number }}{% else %}#{% endif %}">
-                    بعدی
-                </a>
-            </li>
-        </ul>
+                        قبلی
+                    </a>
+                </li>
+                <li class="page-item"><a class="page-link active" href="#">{{ portfolios.number }}</a></li>
+                <li class="page-item {% if portfolios.has_next %}{% else %} disabled {% endif %}">
+                    <a class="page-link"
+                       href="{% if portfolios.has_next %}?page={{ portfolios.next_page_number }}{% else %}#{% endif %}">
+                        بعدی
+                    </a>
+                </li>
+            </ul>
+        {% endifnotequal %}
     {% endif %}
 {% endblock %}
