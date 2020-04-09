@@ -183,7 +183,7 @@ span.service-text,
 .service3,
 .service4,
 .service5,
-.service6 > .overlay1:hover,
+.service6>.overlay1:hover,
 .overlay2:hover,
 .overlay3:hover,
 .overlay4:hover {
@@ -295,7 +295,7 @@ li.contact-way {
     text-align: justify;
     text-align-last: right;
     font-size: 30px;
-    line-height: 50px;
+    line-height: 65px;
 }
 
 .black-box {
@@ -388,7 +388,7 @@ nav {
 .burger div {
     width: 25px;
     height: 3px;
-    background-color: white;
+    background-color: #212121;
     margin: 5px;
     transition: 0.3s ease;
 }
@@ -423,15 +423,12 @@ nav {
     .logo {
         width: 15%;
     }
-
     .search {
         width: 20%;
     }
-
     .nav-links {
         width: 65%;
     }
-
     .logo img {
         width: 130px;
     }
@@ -441,19 +438,15 @@ nav {
     .nav-links {
         width: 60%;
     }
-
     input[type="search"] {
         max-width: 70%;
     }
-
     .nav-links {
         width: 70%;
     }
-
     .search {
         justify-content: flex-end;
     }
-
     .logo {
         width: 20%;
         justify-content: left;
@@ -465,7 +458,6 @@ nav {
     body {
         overflow-x: hidden;
     }
-
     .nav-links {
         position: absolute;
         right: 0;
@@ -484,26 +476,21 @@ nav {
         padding-bottom: 1rem;
         padding-top: 1rem;
     }
-
     .nav-links li {
         opacity: 0;
     }
-
     .burger {
         display: block;
         cursor: pointer;
     }
-
     input[type="search"] {
         display: none;
     }
-
     .nav-links li.search-hide {
         display: block;
         width: 80%;
         order: -1;
     }
-
     .nav-links li.search-hide input {
         display: block !important;
         margin: auto;
@@ -551,9 +538,9 @@ nav {
     .logo {
         order: -1;
     }
-
     .burger {
         order: 2;
+        margin: 1rem;
     }
 }
 
@@ -745,6 +732,7 @@ a.contact-icon {
 /*pagination styles*/
 
 .pagination {
+    padding: 0;
     list-style: none;
     display: block;
     text-align: center;
@@ -752,6 +740,8 @@ a.contact-icon {
 
 .page-link {
     text-decoration: none;
+    color: #212121;
+    font-size: 22px;
 }
 
 .page-item {
@@ -765,7 +755,7 @@ a.contact-icon {
 }
 
 .active {
-    font-size: larger;
+    font-size: 22px;
     font-weight: bolder;
 }
 
@@ -773,13 +763,18 @@ a.contact-icon {
 /*end pagination styles*/
 
 @media only screen and (max-width: 420px) {
+    .nav-links a {
+        text-decoration: none !important;
+        color: #f2f2f2 !important;
+        font-weight: 600 !important;
+        font-size: 20px !important;
+    }
     p.black-text {
         text-align: right !important;
         font-size: 80px !important;
         color: #f1f1f1 !important;
         margin-right: 0.5rem !important;
     }
-
     p.white-text {
         margin-left: 0.5rem !important;
         text-align: left !important;
@@ -787,37 +782,42 @@ a.contact-icon {
         font-size: 80px !important;
         color: #212121 !important;
     }
-
     .black-side {
         background-color: #212121 !important;
         height: 250px !important;
         width: 50% !important;
     }
-
     .white-side {
         width: 50% !important;
         height: 200px !important;
         background-color: #f1f1f1 !important;
     }
-
+    .contact-box {
+        margin-right: 2rem !important;
+        text-align: right !important;
+        font-size: 30px !important;
+        flex-direction: row-reverse !important;
+        display: flex !important;
+    }
+    li.contact-way {
+        margin: 1rem !important;
+        font-size: 21px !important;
+    }
     span.service-text,
     .portfolio-text,
     .about-text,
     .contact-text {
-        margin-right: 6rem !important;
+        margin-right: 4.7rem !important;
         color: #f1f1f1 !important;
     }
-
     .service-row-1 {
         display: flex !important;
         flex-wrap: wrap !important;
     }
-
     .service-row-2 {
         display: flex !important;
         flex-wrap: wrap !important;
     }
-
     .service1,
     .service2,
     .service3,
@@ -827,14 +827,13 @@ a.contact-icon {
         position: relative !important;
         color: white !important;
         font-size: 60px !important;
+        margin: 0.5rem !important;
     }
-
     .port1 {
         display: flex !important;
         flex-wrap: wrap !important;
         margin-top: 6rem !important;
     }
-
     .about-us-main {
         display: flex !important;
         flex-wrap: wrap !important;
@@ -842,29 +841,32 @@ a.contact-icon {
         margin-top: 2rem !important;
         justify-content: space-evenly !important;
     }
-
+    .about-us-text {
+        color: #f1f1f1;
+        line-height: 40px !important;
+        font-size: 22px !important;
+        text-align: justify !important;
+        text-align-last: right !important;
+    }
     .portfolio-header,
     .aboutus-header {
         text-align: center !important;
-        font-size: 70px !important;
+        font-size: 60px !important;
         margin: 0 !important;
         font-weight: bold !important;
     }
-
     .portfolio-text-page,
     .aboutus-text-page {
-        margin: 1rem 1rem !important;
+        margin: 1rem 1.5rem !important;
         text-align: justify !important;
         text-align-last: right !important;
-        font-size: 28px !important;
+        font-size: 22px !important;
         line-height: 45px !important;
     }
-
     .port1-main {
         position: relative;
         margin-right: 0rem;
     }
-
     p.team-name {
         position: static !important;
         color: #f2f2f2 !important;
@@ -872,34 +874,28 @@ a.contact-icon {
         text-align: center !important;
         font-weight: 900 !important;
     }
-
     img.member-img {
         width: 75% !important;
         height: 350px !important;
     }
-
     .team-member {
         position: static !important;
     }
-
     .team {
         padding: 2rem 0rem 10rem !important;
         margin: 5rem 0 !important;
         background: #212121 !important;
         text-align: center !important;
     }
-
     .about-us-desc {
         width: 90% !important
     }
-
     .logo,
     .logo2 {
         display: none;
     }
-
     .port1-main {
         position: relative;
-        margin-right: 0rem !important;
+        margin: 0.5rem !important;
     }
 }
