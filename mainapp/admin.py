@@ -26,7 +26,7 @@ class PortfoliosA(admin.ModelAdmin):
     search_fields = ['title']
     fieldsets = (
         (None, {
-            'fields': ('service', 'title', ('big_image_or_video', 'current_big_image_or_video'))
+            'fields': ('service', 'title', ('big_image_or_video', 'current_big_image_or_video'), 'active')
         }),
         ('بیشتر', {
             'classes': ('collapse',),
