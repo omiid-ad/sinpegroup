@@ -1,6 +1,6 @@
 from django.contrib import admin
 # from django_summernote.admin import SummernoteModelAdmin
-from django_summernote.models import Attachment
+# from django_summernote.models import Attachment
 
 from .models import *
 
@@ -19,9 +19,9 @@ class CrewA(admin.ModelAdmin):
 
 class PortfoliosA(admin.ModelAdmin):
     readonly_fields = ['current_big_image_or_video', 'current_image1', 'current_image2', 'current_image3',
-                      'current_image4', 'current_image5', 'current_image6']
+                       'current_image4', 'current_image5', 'current_image6']
     date_hierarchy = 'date_created'
-    list_display = ('title', 'date_modified', 'active')
+    list_display = ('title', 'date_modified', 'service', 'active')
     list_filter = ('service', 'active')
     search_fields = ['title']
     fieldsets = (
