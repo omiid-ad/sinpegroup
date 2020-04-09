@@ -35,33 +35,30 @@ class Service(models.Model):
         verbose_name_plural = "خدمات"
 
     def __str__(self):
-        if self.active:
-            return self.title + "(فعال)"
-        elif not self.active:
-            return self.title + "(غیرفعال)"
+        return self.title
 
 
 class Portfolio(models.Model):
     service = models.ForeignKey(Service, on_delete=models.CASCADE, verbose_name="خدمت مربوطه",
                                 default=0)
-                                # default=Service.objects.first().pk)
+    # default=Service.objects.first().pk)
     title = models.CharField(max_length=30, verbose_name="عنوان نمونه کار")
     date_created = models.DateTimeField(auto_now_add=True, verbose_name="تاریخ ایجاد")
     date_modified = models.DateTimeField(auto_now=True, verbose_name="تاریخ آخرین تغییر")
     big_image_or_video = models.FileField(upload_to='portfolios', default='portfolios/default.png', blank=True,
                                           null=True, verbose_name="عکس یا فیلم نمونه بزرگ")
     image1 = models.ImageField(upload_to='portfolios', default='portfolios/default.png', blank=True,
-                              null=True, verbose_name="عکس نمونه اول")
+                               null=True, verbose_name="عکس نمونه اول")
     image2 = models.ImageField(upload_to='portfolios', default='portfolios/default.png', blank=True,
-                              null=True, verbose_name="عکس نمونه دوم")
+                               null=True, verbose_name="عکس نمونه دوم")
     image3 = models.ImageField(upload_to='portfolios', default='portfolios/default.png', blank=True,
-                              null=True, verbose_name="عکس نمونه سوم")
+                               null=True, verbose_name="عکس نمونه سوم")
     image4 = models.ImageField(upload_to='portfolios', default='portfolios/default.png', blank=True,
-                              null=True, verbose_name="عکس نمونه چهارم")
+                               null=True, verbose_name="عکس نمونه چهارم")
     image5 = models.ImageField(upload_to='portfolios', default='portfolios/default.png', blank=True,
-                              null=True, verbose_name="عکس نمونه پنجم")
+                               null=True, verbose_name="عکس نمونه پنجم")
     image6 = models.ImageField(upload_to='portfolios', default='portfolios/default.png', blank=True,
-                              null=True, verbose_name="عکس نمونه ششم")
+                               null=True, verbose_name="عکس نمونه ششم")
     active = models.BooleanField(default=True, verbose_name="نمونه کار فعال")
 
     class Meta:
